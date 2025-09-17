@@ -1,32 +1,25 @@
-import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="shadow sticky z-50 top-0">
-      {/* Top Bar */}
-      <div className="flex flex-col items-center justify-center bg-[#0d47a1]">
-        <br />
-        <h1 className="text-3xl font-bold text-white">
-          NextGen Data Innovations Pvt. Ltd.
-        </h1>
-        <br />
-      </div>
-
-      {/* Navbar */}
-      <nav className="bg-white border-gray-200 px-4 lg:px-3 py-2">
+    <header className="shadow sticky z-50 top-0 bg-white">
+      <nav className="border-gray-200 px-4 lg:px-6 py-3">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-          {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <img src="/logo_web.jpg" className="mr-3 h-12" alt="Logo" />
+          {/* Logo + Company Name */}
+          <Link to="/" className="flex items-center space-x-3">
+            <img src="/logo_web.jpg" className="h-12" alt="Logo" />
+            <span className="self-center text-xl font-semibold whitespace-nowrap text-[#0d47a1]">
+              NextGen Data Innovations Pvt. Ltd.
+            </span>
           </Link>
 
-          {/* Hamburger button (only mobile) */}
+          {/* Hamburger Button (Mobile) */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-500 rounded-lg lg:hidden hover:bg-gray-100"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none"
           >
             <svg
               className="w-6 h-6"
@@ -55,7 +48,7 @@ export default function Header() {
 
           {/* Nav Links */}
           <div
-            className={`${isOpen ? 'block' : 'hidden'} w-full lg:flex lg:w-auto lg:order-1`}
+            className={`${isOpen ? "block" : "hidden"} w-full lg:flex lg:w-auto lg:order-1`}
           >
             <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
               <li>
@@ -63,9 +56,9 @@ export default function Header() {
                   to="/"
                   onClick={() => setIsOpen(false)}
                   className={({ isActive }) =>
-                    `block py-2 pr-4 pl-3 ${
-                      isActive ? 'text-[#0d47a1]' : 'text-gray-700'
-                    } hover:text-[#0d47a1]`
+                    `block py-2 pr-4 pl-3 rounded-lg transition-colors ${
+                      isActive ? "text-white bg-[#0d47a1]" : "text-gray-700"
+                    } hover:text-white hover:bg-[#0d47a1]`
                   }
                 >
                   Home
@@ -76,9 +69,9 @@ export default function Header() {
                   to="/about"
                   onClick={() => setIsOpen(false)}
                   className={({ isActive }) =>
-                    `block py-2 pr-4 pl-3 ${
-                      isActive ? 'text-[#0d47a1]' : 'text-gray-700'
-                    } hover:text-[#0d47a1]`
+                    `block py-2 pr-4 pl-3 rounded-lg transition-colors ${
+                      isActive ? "text-white bg-[#0d47a1]" : "text-gray-700"
+                    } hover:text-white hover:bg-[#0d47a1]`
                   }
                 >
                   About Us
@@ -89,9 +82,9 @@ export default function Header() {
                   to="/services"
                   onClick={() => setIsOpen(false)}
                   className={({ isActive }) =>
-                    `block py-2 pr-4 pl-3 ${
-                      isActive ? 'text-[#0d47a1]' : 'text-gray-700'
-                    } hover:text-[#0d47a1]`
+                    `block py-2 pr-4 pl-3 rounded-lg transition-colors ${
+                      isActive ? "text-white bg-[#0d47a1]" : "text-gray-700"
+                    } hover:text-white hover:bg-[#0d47a1]`
                   }
                 >
                   Services
@@ -102,9 +95,9 @@ export default function Header() {
                   to="/contact"
                   onClick={() => setIsOpen(false)}
                   className={({ isActive }) =>
-                    `block py-2 pr-4 pl-3 ${
-                      isActive ? 'text-[#0d47a1]' : 'text-gray-700'
-                    } hover:text-[#0d47a1]`
+                    `block py-2 pr-4 pl-3 rounded-lg transition-colors ${
+                      isActive ? "text-white bg-[#0d47a1]" : "text-gray-700"
+                    } hover:text-white hover:bg-[#0d47a1]`
                   }
                 >
                   Contact Us
