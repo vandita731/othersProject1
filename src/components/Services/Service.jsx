@@ -9,31 +9,26 @@ export default function Services() {
       title: "📊 Custom Dataset Creation",
       description:
         "Tailored textual datasets for NLP tasks such as summarization, classification, question answering, and more.",
-
     },
     {
       title: "🌐 Multilingual Data Curation",
       description:
         "Building datasets in Indian regional and global languages for robust multilingual AI applications.",
-
     },
     {
       title: "🤖 Training Data for LLMs",
       description:
         "High-quality data pipelines to enhance and fine-tune large language models for industry-specific needs.",
-
     },
     {
       title: "🔍 Annotation & Labeling",
       description:
         "Human + AI-assisted annotation of text, images, video, and speech data for machine learning and vision tasks.",
-
     },
     {
       title: "🔄 Data Processing Pipelines",
       description:
         "Scalable pipelines for cleaning, structuring, and augmenting unstructured datasets.",
-
     },
   ];
 
@@ -63,7 +58,7 @@ export default function Services() {
   };
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-blue-100 min-h-screen">
       <div className="container m-auto px-6 md:px-12 xl:px-6">
         {/* Services Grid */}
         <h2 className="text-3xl font-bold text-[#0d47a1] md:text-4xl text-center mb-12">
@@ -75,13 +70,6 @@ export default function Services() {
               key={index}
               className="p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition flex flex-col items-center text-center"
             >
-              {service.image && (
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-16 h-16 object-contain mb-4"
-                />
-              )}
               <h3 className="text-xl font-semibold text-gray-800">
                 {service.title}
               </h3>
@@ -91,50 +79,46 @@ export default function Services() {
         </div>
 
         {/* Image Slider */}
-<h2 className="text-2xl font-bold text-[#0d47a1] text-center mb-8">
-  Gallery
-</h2>
+        <h2 className="text-2xl font-bold text-[#0d47a1] text-center mb-8">
+          Gallery
+        </h2>
 
-<div className="flex justify-center">
-  <div className="w-full max-w-3xl">
-    <Slider
-      {...settings}
-      className="mx-auto"   // forces slick to align center
-    >
-      {sliderImages.map((src, idx) => (
-        <div key={idx} className="flex justify-center">
-          <img
-            src={src}
-            alt={`Slide ${idx + 1}`}
-            className="rounded-xl shadow-lg max-h-[400px] object-contain mx-auto"
-          />
+        <div className="flex justify-center">
+          <div className="w-full max-w-3xl">
+            <Slider {...settings} className="mx-auto">
+              {sliderImages.map((src, idx) => (
+                <div key={idx} className="flex justify-center">
+                  <img
+                    src={src}
+                    alt={`Slide ${idx + 1}`}
+                    className="rounded-xl shadow-lg max-h-[400px] object-contain mx-auto"
+                  />
+                </div>
+              ))}
+            </Slider>
+          </div>
         </div>
-      ))}
-    </Slider>
-  </div>
-</div>
 
-<style jsx global>{`
-  .slick-slide {
-    display: flex !important;
-    justify-content: center;   /* center each slide */
-    align-items: center;
-  }
-  .slick-dots {
-    bottom: -35px;
-  }
-  .slick-dots li button:before {
-    font-size: 14px;
-    color: #0d47a1;
-    opacity: 0.7;
-  }
-  .slick-dots li.slick-active button:before {
-    font-size: 18px;
-    color: #0d47a1;
-    opacity: 1;
-  }
-`}</style>
-
+        <style jsx global>{`
+          .slick-slide {
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+          }
+          .slick-dots {
+            bottom: -35px;
+          }
+          .slick-dots li button:before {
+            font-size: 14px;
+            color: #0d47a1;
+            opacity: 0.7;
+          }
+          .slick-dots li.slick-active button:before {
+            font-size: 18px;
+            color: #0d47a1;
+            opacity: 1;
+          }
+        `}</style>
       </div>
     </section>
   );
