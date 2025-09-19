@@ -2,13 +2,13 @@ import React from "react";
 
 export default function Contact() {
   return (
-    <div className="relative flex items-top justify-center min-h-[700px] bg-white sm:items-center sm:pt-0">
+    <div className="relative flex items-top justify-center min-h-[700px] bg-blue-100 sm:items-center sm:pt-0">
       <div className="max-w-6xl mx-auto sm:px-6 lg:px-8">
-        <div className=" overflow-hidden">
+        <div className="overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             
             {/* Contact Info Section */}
-            <div className="p-6 mr-2 bg-gray-100 sm:rounded-lg shadow-md">
+            <div className="p-6 mr-2 bg-white sm:rounded-lg shadow-md">
               <h1 className="text-3xl sm:text-4xl text-[#0d47a1] font-extrabold tracking-tight">
                 Contact Us
               </h1>
