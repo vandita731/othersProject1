@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from "react";
 
+// Import images as modules
+import aImg from "../../images/a.png";
+import bImg from "../../images/b.png";
+import cImg from "../../images/c.png";
+import dImg from "../../images/d.png";
+import fImg from "../../images/f.png";
+import staticImg from "../../images/img.png";
+
 export default function About() {
-  const sliderImages = [
-    "/images/a.png",
-    "/images/b.png",
-    "/images/c.png",
-    "/images/d.png",
-    "/images/f.png",
-  ];
+  const sliderImages = [aImg, bImg, cImg, dImg, fImg];
 
   const [current, setCurrent] = useState(0);
 
-  // Auto-slide every 3 seconds
+  // Auto-slide every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % sliderImages.length);
-    }, 3000);
+    }, 5000); // 5000ms = 5 seconds
     return () => clearInterval(interval);
   }, [sliderImages.length]);
 
@@ -75,7 +77,7 @@ export default function About() {
         <div className="mt-20">
           <div className="flex justify-center">
             <img
-              src="/images/img.png"
+              src={staticImg}
               alt="About NextGen Data Innovations"
               className="rounded-lg shadow-md max-h-[400px] object-contain"
               loading="lazy"

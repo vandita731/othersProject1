@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+// Import logo as a module so Vite can inline it
+import logoImg from '../../images/logo_img.jpg';
 
 export default function Home() {
     return (
@@ -23,8 +24,8 @@ export default function Home() {
                 {/* Bigger Circle Logo */}
                 <div className="grid place-items-center sm:mt-5">
                     <img
-                        className="w-80 h-80 rounded-full  object-contain"
-                        src="/images/logo_img.jpg"
+                        className="w-80 h-80 rounded-full object-contain"
+                        src={logoImg}  // updated
                         alt="NextGen Logo"
                     />
                 </div>

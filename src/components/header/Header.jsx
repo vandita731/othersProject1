@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
+// Import logo image
+import logoWeb from "../../images/logo_web.jpg";
+
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -10,7 +13,7 @@ export default function Header() {
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
           {/* Logo + Company Name */}
           <Link to="/" className="flex items-center space-x-3">
-            <img src="/images/logo_web.jpg" className="h-12" alt="Logo" />
+            <img src={logoWeb} className="h-12" alt="Logo" />
             <span className="self-center text-xl font-semibold whitespace-nowrap text-[#0d47a1]">
               NextGen Data Innovations Pvt. Ltd.
             </span>
@@ -51,58 +54,24 @@ export default function Header() {
             className={`${isOpen ? "block" : "hidden"} w-full lg:flex lg:w-auto lg:order-1`}
           >
             <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-              <li>
-                <NavLink
-                  to="/"
-                  onClick={() => setIsOpen(false)}
-                  className={({ isActive }) =>
-                    `block py-2 pr-4 pl-3 rounded-lg transition-colors ${
-                      isActive ? "text-white bg-[#0d47a1]" : "text-gray-700"
-                    } hover:text-white hover:bg-[#0d47a1]`
-                  }
-                >
-                  Home
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/about"
-                  onClick={() => setIsOpen(false)}
-                  className={({ isActive }) =>
-                    `block py-2 pr-4 pl-3 rounded-lg transition-colors ${
-                      isActive ? "text-white bg-[#0d47a1]" : "text-gray-700"
-                    } hover:text-white hover:bg-[#0d47a1]`
-                  }
-                >
-                  About Us
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/services"
-                  onClick={() => setIsOpen(false)}
-                  className={({ isActive }) =>
-                    `block py-2 pr-4 pl-3 rounded-lg transition-colors ${
-                      isActive ? "text-white bg-[#0d47a1]" : "text-gray-700"
-                    } hover:text-white hover:bg-[#0d47a1]`
-                  }
-                >
-                  Services
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/contact"
-                  onClick={() => setIsOpen(false)}
-                  className={({ isActive }) =>
-                    `block py-2 pr-4 pl-3 rounded-lg transition-colors ${
-                      isActive ? "text-white bg-[#0d47a1]" : "text-gray-700"
-                    } hover:text-white hover:bg-[#0d47a1]`
-                  }
-                >
-                  Contact Us
-                </NavLink>
-              </li>
+              {["/", "/about", "/services", "/contact"].map((path, idx) => {
+                const label = ["Home", "About Us", "Services", "Contact Us"][idx];
+                return (
+                  <li key={idx}>
+                    <NavLink
+                      to={path}
+                      onClick={() => setIsOpen(false)}
+                      className={({ isActive }) =>
+                        `block py-2 pr-4 pl-3 rounded-lg transition-colors ${
+                          isActive ? "text-white bg-[#0d47a1]" : "text-gray-700"
+                        } hover:text-white hover:bg-[#0d47a1]`
+                      }
+                    >
+                      {label}
+                    </NavLink>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>
