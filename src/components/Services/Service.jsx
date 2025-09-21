@@ -1,7 +1,4 @@
-import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import React, { useState, useEffect } from "react";
 
 export default function Services() {
   const services = [
@@ -32,7 +29,6 @@ export default function Services() {
     },
   ];
 
-  // Your slider images
   const sliderImages = [
     "/images/1.png",
     "/images/2.png",
@@ -43,19 +39,15 @@ export default function Services() {
     "/images/7.png",
   ];
 
-  // Slider settings
-  const settings = {
-    dots: true,
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    centerMode: true, // keeps slide centered
-    centerPadding: "0px", // no side padding
-  };
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Auto-slide every 3s
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % sliderImages.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="py-16 bg-blue-100 min-h-screen">
@@ -78,47 +70,35 @@ export default function Services() {
           ))}
         </div>
 
-        {/* Image Slider */}
+        {/* Custom Slider */}
         <h2 className="text-2xl font-bold text-[#0d47a1] text-center mb-8">
           Gallery
         </h2>
+        <div className="relative w-full max-w-3xl mx-auto h-96">
+          {sliderImages.map((src, idx) => (
+            <img
+              key={idx}
+              src={src}
+              alt={`Slide ${idx + 1}`}
+              className={`absolute top-0 left-0 w-full h-96 object-contain rounded-xl shadow-lg transition-opacity duration-700 ${
+                idx === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
+              }`}
+            />
+          ))}
 
-        <div className="flex justify-center">
-          <div className="w-full max-w-3xl">
-            <Slider {...settings} className="mx-auto">
-              {sliderImages.map((src, idx) => (
-                <div key={idx} className="flex justify-center">
-                  <img
-                    src={src}
-                    alt={`Slide ${idx + 1}`}
-                    className="rounded-xl shadow-lg max-h-[400px] object-contain mx-auto"
-                  />
-                </div>
-              ))}
-            </Slider>
+          {/* Dots */}
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            {sliderImages.map((_, idx) => (
+              <button
+                key={idx}
+                className={`w-3 h-3 rounded-full ${
+                  idx === currentSlide ? "bg-[#40bccc]" : "bg-[#0d47a1]/70"
+                }`}
+                onClick={() => setCurrentSlide(idx)}
+              />
+            ))}
           </div>
         </div>
-
-        <style jsx global>{`
-          .slick-slide {
-            display: flex !important;
-            justify-content: center;
-            align-items: center;
-          }
-          .slick-dots {
-            bottom: -35px;
-          }
-          .slick-dots li button:before {
-            font-size: 14px;
-            color: #0d47a1;
-            opacity: 0.7;
-          }
-          .slick-dots li.slick-active button:before {
-            font-size: 18px;
-            color: #0d47a1;
-            opacity: 1;
-          }
-        `}</style>
       </div>
     </section>
   );

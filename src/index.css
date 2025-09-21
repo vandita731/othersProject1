@@ -1,16 +1,2 @@
 @import "tailwindcss";
-@import "slick-carousel/slick/slick.css";
-@import "slick-carousel/slick/slick-theme.css";
-
-/* Make slick dots bigger */
-.slick-dots li button:before {
-  font-size: 14px !important;  /* default is 10px */
-  color: #0d47a1 !important;   /* your brand blue */
-  opacity: 0.8;
-}
-
-.slick-dots li.slick-active button:before {
-  color: #40bccc !important;  /* active dot color */
-  font-size: 16px !important;
-}
 
