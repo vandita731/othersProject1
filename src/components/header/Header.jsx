@@ -10,7 +10,7 @@ export default function Header() {
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
           {/* Logo + Company Name */}
           <Link to="/" className="flex items-center space-x-3">
-            <img src="/logo_web.jpg" className="h-12" alt="Logo" />
+            <img src="/images/logo_web.jpg" className="h-12" alt="Logo" />
             <span className="self-center text-xl font-semibold whitespace-nowrap text-[#0d47a1]">
               NextGen Data Innovations Pvt. Ltd.
             </span>

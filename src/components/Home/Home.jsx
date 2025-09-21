@@ -24,7 +24,7 @@ export default function Home() {
                 <div className="grid place-items-center sm:mt-5">
                     <img
                         className="w-80 h-80 rounded-full  object-contain"
-                        src="/logo_img.jpg"
+                        src="/images/logo_img.jpg"
                         alt="NextGen Logo"
                     />
                 </div>

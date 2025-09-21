@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 export default function About() {
   // Slider images
-  const sliderImages = ["/a.png", "/b.png", "/c.png", "/d.png", "/f.png"];
+  const sliderImages = ["/images/a.png", "/images/b.png", "/images/c.png", "/images/d.png", "/images/f.png"];
 
   // Slider settings
   const settings = {
@@ -65,7 +65,7 @@ export default function About() {
           {/* Centered Image */}
           <div className="flex justify-center">
             <img
-              src="/img.png"
+              src="/images/img.png"
               alt="About NextGen Data Innovations"
               className="rounded-lg shadow-md max-h-[400px] object-contain"
             />
