@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-
-// Import logo image
 import logoWeb from "../../images/logo_web.jpg";
 
 export default function Header() {
@@ -14,8 +12,8 @@ export default function Header() {
           {/* Logo + Company Name */}
           <Link to="/" className="flex items-center space-x-3">
             <img src={logoWeb} className="h-12" alt="Logo" />
-            <span className="self-center text-xl font-semibold whitespace-nowrap text-[#0d47a1]">
-              NextGen Data Innovations Pvt. Ltd.
+            <span className="self-center text-lg lg:text-xl font-bold whitespace-nowrap bg-gradient-to-r from-[#d81b60] via-[#8e24aa] to-[#1e88e5] bg-clip-text text-transparent">
+              NEXTGENVECTORA DATA INNOVATIONS (OPC) PRIVATE LIMITED
             </span>
           </Link>
 
@@ -49,7 +47,7 @@ export default function Header() {
             </svg>
           </button>
 
-          {/* Nav Links */}
+          {/* Navigation Links */}
           <div
             className={`${isOpen ? "block" : "hidden"} w-full lg:flex lg:w-auto lg:order-1`}
           >
@@ -62,9 +60,11 @@ export default function Header() {
                       to={path}
                       onClick={() => setIsOpen(false)}
                       className={({ isActive }) =>
-                        `block py-2 pr-4 pl-3 rounded-lg transition-colors ${
-                          isActive ? "text-white bg-[#0d47a1]" : "text-gray-700"
-                        } hover:text-white hover:bg-[#0d47a1]`
+                        `block py-2 pr-4 pl-3 rounded-lg transition-all duration-300 ${
+                          isActive
+                            ? "text-white bg-gradient-to-r from-[#d81b60] via-[#8e24aa] to-[#1e88e5]"
+                            : "text-gray-700 hover:text-white hover:bg-gradient-to-r hover:from-[#d81b60] hover:via-[#8e24aa] hover:to-[#1e88e5]"
+                        }`
                       }
                     >
                       {label}
