@@ -8,11 +8,23 @@ export default function Header() {
   return (
     <header className="shadow sticky z-50 top-0 bg-white">
       <nav className="border-gray-200 px-4 lg:px-6 py-3">
-        <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-          {/* Logo + Company Name */}
-          <Link to="/" className="flex items-center space-x-3">
-            <img src={logoWeb} className="h-12" alt="Logo" />
-            <span className="self-center text-lg lg:text-xl font-bold whitespace-nowrap bg-gradient-to-r from-[#d81b60] via-[#8e24aa] to-[#1e88e5] bg-clip-text text-transparent">
+        <div className="flex flex-wrap lg:flex-nowrap justify-between items-center mx-auto max-w-screen-xl">
+          
+          {/* Company Name + Logo */}
+          <Link
+            to="/"
+            className="flex flex-col-reverse lg:flex-row items-center lg:items-center lg:space-x-4 w-full lg:w-auto"
+          >
+            {/* Logo */}
+            <img src={logoWeb} className="h-12 w-auto mt-2 lg:mt-0" alt="Logo" />
+
+            {/* Company Name */}
+            <span
+              className="text-center lg:text-left font-bold
+                text-base sm:text-lg md:text-xl lg:text-lg xl:text-xl
+                bg-gradient-to-r from-[#d81b60] via-[#8e24aa] to-[#1e88e5]
+                bg-clip-text text-transparent"
+            >
               NEXTGENVECTORA DATA INNOVATIONS (OPC) PRIVATE LIMITED
             </span>
           </Link>
@@ -74,6 +86,7 @@ export default function Header() {
               })}
             </ul>
           </div>
+
         </div>
       </nav>
     </header>
