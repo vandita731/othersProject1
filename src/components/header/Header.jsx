@@ -9,21 +9,25 @@ export default function Header() {
     <header className="shadow sticky z-50 top-0 bg-white">
       <nav className="border-gray-200 px-4 lg:px-6 py-3">
         <div className="flex flex-wrap lg:flex-nowrap justify-between items-center mx-auto max-w-screen-xl">
-          
+
           {/* Company Name + Logo */}
           <Link
             to="/"
-            className="flex flex-col-reverse lg:flex-row items-center lg:items-center lg:space-x-4 w-full lg:w-auto"
+            className="flex flex-row items-center space-x-3 w-full lg:w-auto"
           >
-            {/* Logo */}
-            <img src={logoWeb} className="h-12 w-auto mt-2 lg:mt-0" alt="Logo" />
+            {/* Logo on Left */}
+            <img
+              src={logoWeb}
+              className="h-12 w-auto"
+              alt="Logo"
+            />
 
             {/* Company Name */}
             <span
-              className="text-center lg:text-left font-bold
-                text-base sm:text-lg md:text-xl lg:text-lg xl:text-xl
+              className="font-bold text-center lg:text-left
+                text-sm sm:text-base md:text-lg lg:text-xl
                 bg-gradient-to-r from-[#d81b60] via-[#8e24aa] to-[#1e88e5]
-                bg-clip-text text-transparent"
+                bg-clip-text text-transparent leading-tight"
             >
               NEXTGENVECTORA DATA INNOVATIONS (OPC) PRIVATE LIMITED
             </span>
